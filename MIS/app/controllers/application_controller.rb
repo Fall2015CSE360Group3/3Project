@@ -23,6 +23,14 @@ class ApplicationController < ActionController::Base
   end
   end
 
+  def relogin()
+  	#p "ACCESS ID: " + session[:access_id]
+  	if session[:access_id] == nil
+  		redirect_to :controller => "welcome", :action => "main"
+  	end
+  end
+
+
   def main_route() #returns route to the main page of the current user type (Used for setting the destination of the "Back" links on index pages)
 	if session[:access_id] == "ADMIN"
 		return "/admin/main"

@@ -1,4 +1,7 @@
 class NursesController < ApplicationController
+
+  before_filter:relogin, :except => ["login", "login_submit"]
+	
   def login
   p "NURSE_LOGIN"
   end

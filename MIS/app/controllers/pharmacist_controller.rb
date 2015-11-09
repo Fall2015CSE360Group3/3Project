@@ -1,4 +1,7 @@
 class PharmacistController < ApplicationController
+
+  before_filter:relogin, :except => ["login", "login_submit"]
+
   def login
 	p "PHARMACIST LOGIN"
   end
@@ -25,6 +28,7 @@ class PharmacistController < ApplicationController
   end
   
   def main
+  	authenticate()
 	@firstname = session[:firstname]
 	@lastname = session[:lastname]
 	@patients = Patient.all

@@ -1,4 +1,7 @@
 class DoctorsController < ApplicationController
+
+	before_filter:relogin, :except => ["login", "login_submit"]
+
   def index
   	#get liust of all doctors in the Doctors table:
 	@doctors = Doctor.all

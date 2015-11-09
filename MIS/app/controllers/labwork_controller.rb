@@ -1,4 +1,7 @@
 class LabworkController < ApplicationController
+
+  before_filter:relogin
+  
   def index
     @allowCreate = filter_action(["ADMIN", "DOCTOR"])#only admins/doctors can reques labwork
     @allowEdit = filter_action(["LABSTAFF"])#only labstaff can edit an existing labwork request

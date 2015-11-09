@@ -1,4 +1,7 @@
 class HspstaffsController < ApplicationController
+
+  before_filter:relogin, :except => ["login", "login_submit"]
+  
   def login
   p "HSP_STAFF_LOGIN"
   end

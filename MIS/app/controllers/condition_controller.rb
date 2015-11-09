@@ -1,5 +1,6 @@
 class ConditionController < ApplicationController
 
+  before_filter:relogin
 
     @@symptomList = 
       ["Chest pain", 
