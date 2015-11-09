@@ -1,5 +1,7 @@
 class LabstaffController < ApplicationController
   
+  before_filter:relogin, :except => ["login", "login_submit"]
+
   def login
 	p "LABSTAFF LOGIN"
   end

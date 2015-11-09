@@ -1,5 +1,7 @@
 class AppointmentController < ApplicationController
 
+  before_filter:relogin
+
   def index
   	#Get all appointments for the patient with the ID passed as a parameter:
     @currentPatient = Patient.find_by_id(params[:id])

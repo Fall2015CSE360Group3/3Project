@@ -1,5 +1,7 @@
 class ReportsController < ApplicationController
 
+	  before_filter:before_filter:relogin
+
 def ages
 	@main_route = main_route()
 	@counts = Array.new()

@@ -1,5 +1,8 @@
 class PatientsController < ApplicationController
 
+    
+  before_filter:relogin, :except => ["login", "login_submit"]
+
 	    @@raceList = 
       ["White/Caucasian", 
         "Black/African American", 
@@ -7,6 +10,8 @@ class PatientsController < ApplicationController
         "Hispanic",
         "Native American",
         "Other"]
+
+
 
   def login
     p "PATIENT_LOGIN"
@@ -39,6 +44,7 @@ class PatientsController < ApplicationController
   	@editPatient.update_attributes(:group => params[:selGroup])
   	redirect_to :controller => 'condition', :action => 'index', :id => params[:patient_id]
   end
+
 
   def main
   	@firstname = session[:firstname]
