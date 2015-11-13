@@ -20,11 +20,22 @@ a.btn:visited {
 
 .col-md-12.page-header {
     text-align:center;
+    margin: auto;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .col-md-12.find-path {
     visibility: hidden;
     height: 0px;
+}
+
+.col-md-12.page-header-text {
+    color:black;
+}
+
+.welcom-body {
+    height: 691px;
+    width: 100%;
 }
 
 .login-button {
@@ -33,6 +44,7 @@ a.btn:visited {
 
 .entry-content .main-content {
     text-align:center;
+    margin:auto;
 }
 
 .login-image {
@@ -47,9 +59,26 @@ a.btn:visited {
     margin: 20px 0 0 20px;
 }
 
+.login-body {
+    height : 691px;
+}
+
+.intro{
+    background-color: rgba(255,255,255,0.5); 
+    height:140px;
+    margin:1% 1% 1% 1%;
+    width: 98%;
+    border-radius: 15px;
+}
+
 .login-body .login-content {
     margin:auto;
     float:none;
+}
+
+.body {
+    background-size: 100%;
+    background-image: url("http://pics4.city-data.com/cpicc/cfiles20907.jpg");
 }
 
 .login-content .btn,
@@ -70,6 +99,11 @@ a.btn:visited {
 .container .main-buttonview {
     float:none;
     margin:auto;
+}
+
+.container {
+    background-color: rgba(255,255,255,0.33);
+    border-radius: 10px;
 }
 
 .container .main-buttonview .btn {
@@ -115,4 +149,81 @@ ul.conditions-list li a:hover {
 .centered-content {
     float:none;
     margin:auto;
+}
+
+.text {
+
+}
+
+.photo {
+    background-image : url("http://dreamatico.com/data_images/doctor/doctor-8.jpg");
+    background-size : 50%;
+    height:100;
+}
+
+.column-left {
+    margin: 1% 1% 1% 1%;
+    float:left; 
+    width: 31%;
+    background-color: rgba(255,255,255,0.53);
+    border-radius: 15px;
+}
+
+.column-center {
+    margin: 1% 1% 1% 1%;
+    float:left;
+    width: 31%; 
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.53);
+}
+
+.column-right{ 
+    margin: 1% 1% 1% 1%;
+    float:left;
+    width: 31%;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.43);
+}
+
+.col-img {
+    margin: 2% 2% 2% 2%;
+    width: 96%; 
+    height:250px;
+    border-radius: 15px;
+}
+
+.usr-story {
+    text-align:center;
+    margin: auto;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background-color: rgba(255,255,255,0.43);
+    border-radius: 5px;
+}
+
+.usr-story-h1 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    text-align:center;
+    margin: auto;
+}
+
+.usr-story-text {
+  display: inline-block;
+  font-size:30px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  line-height: 40px;
+  margin : 5% 2% 5% 2%;
+  vertical-align: middle;
+}
+
+.footer {
+    background-color : black;
+    text-align:center;
+    font-size:18px;
+    height: 250px;
+    line-height: 25px;
+    margin: auto;
+}
+
+.footer-text {
+    color:white;
 }
