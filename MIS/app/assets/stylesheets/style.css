@@ -22,6 +22,11 @@ a.btn:visited {
     text-align:center;
 }
 
+.col-md-12.find-path {
+    visibility: hidden;
+    height: 0px;
+}
+
 .login-button {
     margin:5px;
 }
