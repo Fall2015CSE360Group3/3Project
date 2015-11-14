@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12 page-header">
       <h1><%= @headertext %></h1>
-      <p></p>
+      <p>You are login as <%= session[:access_id]%></p>
       <br>
       <% if @showGroup == true %>
       <a>

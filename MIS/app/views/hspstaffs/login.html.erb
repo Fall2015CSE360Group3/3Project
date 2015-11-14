@@ -1,19 +1,43 @@
-<div class="container entry-content">
-  <div class="row">
-    <div class="col-md-12 page-header">
-<h1>Healthcare Service Provider Login</h1>
-<p></p>
-</div>
-</div>
-<div class="row login-body">
-  <div class="col-md-6 login-content">
-  	<div style="width: 400px; height: 190px; box-shadow: 0px 0px 10px 0px #7D7D7D;"> 
-    <%= link_to( image_tag("hspStaff.png", :class=>"login-image", :alt=>"user silhouette")) %>
-    <%= form_tag(:action => 'login_submit') do %>
-        <p>USERNAME:</br><%= text_field_tag(:username) %></p>
-        <%= submit_tag("Log In", :class=>'btn btn-primary')%>
-    <% end %><br>
+<div class="body">
+  <div class="container entry-content">
+    <div class="row">
+      <div class="col-md-12 page-header">
+        <h1>Healthcare Service Provider Login</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 main-content">
+          <a href="../patients/login" class="btn btn-primary login-button">Patient Login</a>
+          <a href="../doctors/login" class="btn btn-primary login-button">Doctor Login</a>
+          <a href="../nurses/login" class="btn btn-primary login-button">Nurse Login</a>
+          <a href="../labstaff/login" class="btn btn-primary login-button">Lab Staff Login</a>
+          <a href="../hspstaffs/login" class="btn btn-danger login-button">Healthcare Service Provider Login</a>
+          <a href="../pharmacist/login" class="btn btn-primary login-button">Pharmacist Login</a>
+          <!--<a href="../admin/login" class="btn btn-warning login-button">Administrator Login</a>-->
+        </div>
+    </div>
+    <div class="row login-body">
+      <div class="col-md-6 login-content">
+      	<div style="margin:auto; margin-top:40px; width: 400px; height: 190px; box-shadow: 0px 0px 10px 0px #7D7D7D;"> 
+          <%= link_to( image_tag("hspStaff.png", :class=>"login-image", :alt=>"user silhouette")) %>
+          <%= form_tag(:action => 'login_submit') do %>
+            <p>USERNAME:</br><%= text_field_tag(:username) %></p>
+            <%= submit_tag("Log In", :class=>'btn btn-primary')%>
+          <% end %><br>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-</div>
+<div class="footer">
+  <div class="footer-text">Posted by: ASU CSE360 Group3 15Fall</div>
+  <div class="footer-text">Dayton Harris(Leader)</div>
+  <div class="footer-text">Mark Androshick</div>
+  <div class="footer-text">Bishnu Basnet</div>
+  <div class="footer-text">Connor Golobich)</div>
+  <div class="footer-text">Nash Qamer</div>
+  <div class="footer-text">Balaji Sankar</div>
+  <div class="footer-text">Alex Schultz</div>
+  <div class="footer-text">Justin Jau-Yuan Shiao</div>
+  <div class="footer-text">Daniel Villela</div>
 </div>
