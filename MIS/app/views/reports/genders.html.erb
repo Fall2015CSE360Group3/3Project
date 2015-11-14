@@ -1,4 +1,5 @@
 <h1>Report: Genders of Registered Patients</h1>
+<% if @total != 0%>
 <table rules = "all">
     <thead>
 		<th>Gender</th>
@@ -22,5 +23,8 @@
     </tr>
     </tbody>
 </table>
+<% else %>
+    <p>No registered patients found.</p>
+<% end %>
 <br><br>
 <a href= "<%= @main_route %>">Main Menu</a>

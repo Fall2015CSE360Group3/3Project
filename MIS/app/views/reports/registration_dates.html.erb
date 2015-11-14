@@ -1,4 +1,5 @@
 <h1>Report: Patient Registration/Admission Dates</h1>
+<% if @total != 0%>
 <table rules = "all">
     <thead>
 		<th>Month Registered</th>
@@ -19,5 +20,8 @@
 </tr>
     </tbody>
 </table>
+<% else %>
+    <p>No registered patients found.</p>
+<% end %>
 <br><br>
 <a href= "<%= @main_route %>">Main Menu</a>

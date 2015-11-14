@@ -1,11 +1,12 @@
 <h1>Report: Ages of Registered Patients</h1>
+<% if @total != 0%>
 <table rules = "all">
     <thead>
 		<th>Age Range (Years)</th>
         <th>Number of Patients</th>
         <th>Percentage of Total Patients</th>
     </thead>
-    <tbody>
+    <tbody>     
 <% for i in 0..@counts.length-1 do %>
     <tr>
 		<td><%= (i * 10).to_s + " - " + ((i * 10)+9).to_s %></td>
@@ -19,5 +20,8 @@
 </tr>
     </tbody>
 </table>
+<% else %>
+    <p>No registered patients found.</p>
+<% end %>
 <br><br>
 <a href= "<%= @main_route %>">Main Menu</a>

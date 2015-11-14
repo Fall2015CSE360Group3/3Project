@@ -1,5 +1,5 @@
-<h1>History#create</h1>
-<p>Find me in app/views/history/create.html.erb</p>
+<h1>Report Medical History</h1>
+<p></p>
 <%= form_tag(:action => 'create_submit', :patient_id => params[:patient_id]) do %>
 <p>Description:</br><%= text_field_tag(:description, nil, :required => true) %></p>
 <p>Date:</br><%= date_field("", :date, :required => true, max: Date.today) %></p>

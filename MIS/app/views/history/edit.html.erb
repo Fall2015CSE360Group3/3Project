@@ -1,5 +1,5 @@
-<h1>History#edit</h1>
-<p>Find me in app/views/history/edit.html.erb</p>
+<h1>Edit Medical History</h1>
+<p></p>
 <%= form_tag(:action => 'edit_submit', :history_id => params[:history_id]) do %>
 <p>Description: <%= text_field_tag(:description, @editHistory[:description], :required => true) %></p>
 <p>Date:</br><%= date_field "", :date, :value => @editHistory[:date], :required => true,  max: Date.today %></p>
