@@ -1,5 +1,6 @@
 <h1>Report: Patient Groupings</h1>
 <p>You are login as <%= session[:access_id]%></p>
+<% if @total != 0%>
 <table rules = "all">
     <thead>
 		<th>Patient Group</th>
@@ -38,5 +39,8 @@
     </tr>
     </tbody>
 </table>
+<% else %>
+    <p>No registered patients found.</p>
+<% end %>
 <br><br>
 <a href= "<%= @main_route %>">Main Menu</a>

@@ -1,5 +1,5 @@
-<h1>Prescription#create</h1>
-<p>Find me in app/views/prescription/create.html.erb</p>
+<h1>Create e-Prescription</h1>
+<p></p>
 <%= form_tag(:action => 'create_submit', :patient_id => params[:patient_id]) do %>
 <p>Medication:</br><%= text_field_tag(:name, nil, :required => true) %></p>
 <p>Dosage:</br><%= number_field("",:dosage, :required => true, step: 0.01) %></p>

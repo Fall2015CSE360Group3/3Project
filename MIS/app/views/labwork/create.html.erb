@@ -1,5 +1,5 @@
-<h1>Labwork#create</h1>
-<p>Find me in app/views/labwork/create.html.erb</p>
+<h1>Submit Labwork Request</h1>
+<p></p>
 <%= form_tag(:action => 'create_submit', :patient_id => params[:patient_id]) do %>
 <p>Description:</br><%= text_field_tag(:description, nil, :required => true) %></p>
 <%= submit_tag("Create")%>

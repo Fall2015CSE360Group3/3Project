@@ -1,6 +1,6 @@
 class PrescriptionController < ApplicationController
 
-  before_filter:before_filter:relogin
+  before_filter:relogin
   
   def index
     #Get the patient with the ID sent to this action as a parameter from the Patient table.  Store the retrieved patient in an instance variable:

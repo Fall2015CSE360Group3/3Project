@@ -1,5 +1,5 @@
-<h1>Patients#main: Welcome, <%= @firstname %> <%= @lastname %></h1>
-<p>Find me in app/views/patients/main.html.erb</p>
+<h1>Welcome, <%= @firstname %> <%= @lastname %></h1>
+<p></p>
 <br>
 <a <%= link_to "Request an Appointment", {:controller => "appointment", :action => "create", :patient_id => session[:user_id]} %></a>
 <br>
