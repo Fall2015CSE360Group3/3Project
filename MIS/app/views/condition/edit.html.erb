@@ -1,12 +1,20 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
 <h1>Edit Condition</h1>
-<p></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main-content edit-conditions">
 <%= form_tag(:action => 'edit_submit', :condition_id => params[:condition_id]) do %>
 <p>Condition:<%= collection_select("", :condition, @symptoms, :to_s, :to_s, :selected => @editCondition[:condition]) %></p>
 <% if @show_doctors_notes == true %>
 <p>Notes: </br><%= text_area("", :notes, :value => @editCondition[:notes], cols: 60, rows: 40) %><p>
 <% end %>
-<%= submit_tag("Save Changes")%>
+<%= submit_tag("Save Changes", :class=>"btn btn-primary")%>
 <% end %>
 <br>
-<%= link_to "Delete This Condition", {:controller => "condition", :action => "delete", :condition_id => params[:condition_id]} %>
-<br><br><br>
+<%= link_to "Delete This Condition", {:controller => "condition", :action => "delete", :condition_id => params[:condition_id]},{:class=>"btn btn-danger"} %>
+</div>
+    </div>
+  </div>
