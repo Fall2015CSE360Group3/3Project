@@ -1,0 +1,66 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+      <h1>Patients#index</h1>
+      <p>Find me in app/views/admin/patient_index.html.erb</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 table-responsive">
+      <table rules = "all" class="table table-striped table-bordered patient-table">
+        <thead>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Social Security Number</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Date of Birth</th>
+        <th>Weight</th>
+        <th>Height</th>
+        <% if @showConditions == true %>
+            <th colspan = "4">Additional Patient Information</th>
+        <% else %>
+            <th colspan = "3">Additional Patient Information</th>
+        <% end %>
+        <% if @valid == true %>
+
+        <% end %>
+        </thead>
+        <tbody>
+        <% @patients.each do |patient| %>
+            <tr>
+              <td><%= patient.name_first[0] + patient.name_last[0] + patient.id.to_s %></td>
+              <td><%= patient.name_first %></td>
+              <td><%= patient.name_last%></td>
+              <td><%= patient.gender%></td>
+              <td><%= patient.ssn %></td>
+              <td><%= patient.address %></td>
+              <td><%= patient.phone%></td>
+              <td><%= patient.dob%></td>
+              <td><%= patient.weight%></td>
+              <td><%= patient.height%></td>
+              <% if @showConditions == true %>
+                  <td><%= link_to "Health Conditions", {:controller => "condition", :action => "index", :id => patient.id} %></td>
+              <% end %>
+              <td><%= link_to "Medical History", {:controller => "history", :action => "index", :id => patient.id} %></td>
+              <td><%= link_to "Prescriptions", {:controller => "prescription", :action => "index", :id => patient.id} %></td>
+              <td><%= link_to "Appointments", {:controller => "appointment", :action => "index", :id => patient.id} %></td>
+              <% if @valid == true %>
+                  <td class="last-col"><%= link_to "Delete", {:controller => "patients", :action => "delete", :id => patient.id},{:class => "btn btn-danger"} %></td>
+                  <td class="last-col"><%= link_to "Edit", {:controller => "patients", :action => "edit", :id => patient.id}, {:class => "btn btn-info"} %></td>
+              <% end %>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <br>
+      <% if @valid == true %>
+          <a class="btn btn-primary" href="/patients/register">Add Patient</a>
+      <% end %>
+      <br><br>
+      <a class="btn btn-info" href= "<%= @main_route %>">Main Menu</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+      <h1>Condition#edit</h1>
+      <p>Find me in app/views/condition/edit.html.erb</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="edit-conditions center-block edit-info">
+        <%= form_tag(:action => 'edit_submit', :condition_id => params[:condition_id]) do %>
+            <h3>Condition:</h3><%= text_field_tag(:condition, @editCondition[:condition], :required => true) %>
+            <% if @show_doctors_notes == true %>
+                <h3>Notes:</h3><%= text_area("", :notes, :value => @editCondition[:notes], cols: 60, rows: 40) %>
+            <% end %>
+            <p><%= submit_tag("Save Changes", :class=>'btn btn-primary')%></p>
+        <% end %>
+        <p><%= link_to "Delete This Condition", {:controller => "condition", :action => "delete", :condition_id => params[:condition_id]}, {:class => 'btn btn-danger small-width'} %></p>
+      </div>
+    </div>
+  </div>
+</div>

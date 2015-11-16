@@ -1,0 +1,27 @@
+<h1>Appointment#index: <%= @headertext %></h1>
+<p>Find me in app/views/appointment/index.html.erb</p>
+<table rules = "all">
+    <thead>
+        <th>Doctor</th>
+		<th>Date</th>
+        <th>Time</th>
+    </thead>
+    <tbody>
+<% @appointments.each do |appointment| %>
+    <tr>
+        <td><%= (Doctor.find_by_id(appointment.doctor_id)).fullname_specialty %></td>
+        <td><%= appointment.date_time.to_date %></td>
+        <td><%= appointment.date_time.strftime("%I:%M%p") %></td>
+        <% if @allowDelete == true %>
+        <td><%= link_to "Delete", {:controller => "appointment", :action => "delete", :appointment_id => appointment.id} %></td>
+        <% end %>
+    </tr>
+<% end %>
+    </tbody>
+</table>
+<br>
+<% if @allowNew == true %>
+<%= link_to "Add Appointment", {:controller => "appointment", :action => "create", :patient_id => params[:id]} %>
+<br><br>
+<% end %>
+<a href= "<%= @main_route %>">Main Menu</a>

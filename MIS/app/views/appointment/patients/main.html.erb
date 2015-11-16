@@ -1,0 +1,20 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+      <h1>Patients#main: Welcome, <%= @firstname %> <%= @lastname %></h1>
+      <p>Find me in app/views/patients/main.html.erb</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 main-buttonview">
+      <p><a class="btn btn-warning"href="alert">SEND MEDICAL ALERT</a></p>
+      <p><a class="btn btn-primary" <%= link_to "Request an Appointment", {:controller => "appointment", :action => "create", :id => session[:user_id]} %></a></p>
+      <p><a class="btn btn-primary" <%= link_to "View Appointments", {:controller => "appointment", :action => "index", :id => session[:user_id]} %></a></p>
+      <p><a class="btn btn-primary" <%= link_to "View Health Conditions", {:controller => "condition", :action => "index", :id => session[:user_id]} %></a></p>
+      <p><a class="btn btn-primary" <%= link_to "View Medical History", {:controller => "history", :action => "index", :id => session[:user_id]} %></a></p>
+      <p><a class="btn btn-primary" <%= link_to "View Prescriptions", {:controller => "prescription", :action => "index", :id => session[:user_id]} %></a></p>
+      <p><a class="btn btn-info small-width"href="logout">Log Out</a></p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+      <h1>Condition#index: <%= @headertext %></h1>
+      <p>Find me in app/views/condition/index.html.erb</p>
+    </div>
+  </div>
+  <h2>Condition</h2>
+  <ul class="conditions-list">
+    <% @conditions.each do |condition| %>
+        <li>
+          <% if @allowEdit == true %>
+              <%= link_to condition.condition, {:controller => "condition", :action => "edit", :condition_id => condition.id} %>
+          <% else %>
+              <%= condition.condition %>
+          <% end %>
+        </li>
+    <% end %>
+  </ul>
+  <br>
+  <%= link_to "Add Condition", {:controller => "condition", :action => "create", :patient_id => params[:id]}, {:class => "btn btn-primary"} %>
+  <br><br>
+  <a class="btn btn-info" href= "<%= @main_route %>">Main Menu</a>
+</div>

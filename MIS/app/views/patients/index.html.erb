@@ -1,8 +1,8 @@
-<div class="container entry-content">
+<div class="container entry-content table-wide">
   <div class="row">
     <div class="col-md-12 page-header">
-      <h1>Patients#index</h1>
-      <p>Find me in app/views/admin/patient_index.html.erb</p>
+      <h1>Patient Index</h1>
+      <p></p>
     </div>
   </div>
   <div class="row">
@@ -13,6 +13,7 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>Gender</th>
+        <th>Ethnicity/Race</th>
         <th>Social Security Number</th>
         <th>Address</th>
         <th>Phone</th>
@@ -20,7 +21,7 @@
         <th>Weight</th>
         <th>Height</th>
         <% if @showConditions == true %>
-            <th colspan = "4">Additional Patient Information</th>
+            <th colspan = "5">Additional Patient Information</th>
         <% else %>
             <th colspan = "3">Additional Patient Information</th>
         <% end %>
@@ -35,6 +36,7 @@
               <td><%= patient.name_first %></td>
               <td><%= patient.name_last%></td>
               <td><%= patient.gender%></td>
+              <td><%= patient.ethnicity%></td>
               <td><%= patient.ssn %></td>
               <td><%= patient.address %></td>
               <td><%= patient.phone%></td>
@@ -43,6 +45,7 @@
               <td><%= patient.height%></td>
               <% if @showConditions == true %>
                   <td><%= link_to "Health Conditions", {:controller => "condition", :action => "index", :id => patient.id} %></td>
+				  <td><%= link_to "Lab Work", {:controller => "labwork", :action => "index", :id => patient.id} %></td>
               <% end %>
               <td><%= link_to "Medical History", {:controller => "history", :action => "index", :id => patient.id} %></td>
               <td><%= link_to "Prescriptions", {:controller => "prescription", :action => "index", :id => patient.id} %></td>

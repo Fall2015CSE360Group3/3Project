@@ -1,0 +1,19 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+      <h1>Condition#create</h1>
+      <p>Find me in app/views/condition/create.html.erb</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 edit-conditions centered-content">
+      <%= form_tag(:action => 'create_submit', :patient_id => params[:patient_id]) do %>
+      <h4>Condition:</h4><%= text_field_tag(:condition, nil, :required => true) %>
+      <% if @show_doctors_notes == true %>
+      <h4>Notes:</h4><%= text_area("", :notes, cols: 60, rows: 40) %>
+      <% end %>
+      <%= submit_tag("Create", :class=>"btn btn-primary")%>
+      <% end %>
+    </div>
+  </div>
+</div>

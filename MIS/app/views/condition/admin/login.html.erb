@@ -1,0 +1,24 @@
+
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+
+<h1>Admin#login</h1>
+<p>Find me in app/views/admin/login.html.erb</p>
+    </div>
+  </div>
+
+  <div class="row login-body">
+    <div class="col-md-6 login-content">
+      <div style="width: 230px; height: 180px; box-shadow: 0px 0px 5px 0px #7D7D7D;">
+
+      <%= form_tag(:action => 'login_submit') do %>
+          <p>USERNAME:</br><%= text_field_tag(:username) %></p>
+          <p>PASSWORD:</br><%= password_field_tag(:password) %></p>
+          <p style="text-indent: 5em;">
+          <%= submit_tag("Log In")%>
+      <% end %><br>
+    </div>
+  </div>
+</div>
+</div>

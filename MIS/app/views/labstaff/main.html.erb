@@ -1,15 +1,28 @@
 <div class="container entry-content">
-  <div class="row">
-    <div class="col-md-12 page-header">
-      <h1>Labstaff#main: Welcome, <%= @firstname %> <%= @lastname %></h1>
-      <p>Find me in app/views/labstaff/main.html.erb</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 main-buttonview">
-      <p><a class="btn btn-primary" href="/labwork/index">View Labwork Requests</a></p>
-      <p><a class="btn btn-info" href="logout">Log Out</a></p>
-    </div>
-  </div>
+	<div class="row">
+		<div class="col-md-12 page-header">
+<h1>Welcome, <%= @firstname %> <%= @lastname %></h1>
+<p>Click a patient name to view lab work information</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 main-content">
+<table rules = "all" class="table table-striped table-bordered patient-table">
+    <thead>
+		<th>Patient Name</th>
+		<th>Reports Pending Completion</th>
+    </thead>
+    <tbody>
+<% @patients.each do |patient| %>
+    <tr>
+		<td><%= link_to patient.name_last + ", " + patient.name_first, {:controller => "labwork", :action => "index", :id => patient.id} %></td>
+		<td><%= Labwork.where("patient_id = ? AND complete = ?", patient.id, false).all.length %></td>
+    </tr>
+<% end %>
+    </tbody>
+</table>
+<a class="btn btn-info" href="logout">Log Out</a>
 </div>
+		</div>
+	</div>
 

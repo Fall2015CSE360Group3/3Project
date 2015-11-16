@@ -1,8 +1,8 @@
 <div class="container entry-content">
   <div class="row">
     <div class="col-md-12 page-header">
-<h1>Patients#edit</h1>
-<p>Find me in app/views/patients/edit.html.erb</p>
+<h1>Edit Patient</h1>
+<p></p>
       </div>
     </div>
   <div class="row">
@@ -13,6 +13,7 @@
           <h4>Gender:</h4>
           <p><%= radio_button_tag(:gender, 'Male', (@editPatient[:gender] == 'Male'))  %>Male
           <p><%= radio_button_tag(:gender, 'Female', (@editPatient[:gender] == 'Female'))  %>Female
+          <p>Ethnicity/Race:<%= collection_select("", :ethnicity, @races, :to_s, :to_s, :selected => @editPatient[:ethnicity]) %>
           <h4>Social Security Number:</h4><%= text_field_tag(:ssn, @editPatient[:ssn], :maxlength => 9, :required => true) %>
           <h4>Address:</h4><%= text_field_tag(:address, @editPatient[:address], :required => true) %>
           <h4>Phone:</h4><%= telephone_field "", :phone, :value => @editPatient[:phone], :required => true %>

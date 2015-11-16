@@ -1,14 +1,27 @@
 <div class="container entry-content">
   <div class="row">
     <div class="col-md-12 page-header">
-      <h1>Pharmacist#main: Welcome, <%= @firstname %> <%= @lastname %></h1>
-      <p>Find me in app/views/pharmacist/main.html.erb</p>
+<h1>Welcome, <%= @firstname %> <%= @lastname %></h1>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 main-buttonview">
-      <p><a class="btn btn-primary" href="#">Search for Prescription:</a></p>
-      <p><a class="btn btn-info" href="logout">Log Out</a></p>
-    </div>
-  </div>
+    <div class="col-md-12 main-content">
+<p>Click a patient name to view prescription information</p>
+<br>
+<table rules = "all" class="table table-striped table-bordered patient-table table-skinny">
+    <thead>
+		<th>Patient Name</th>
+    </thead>
+    <tbody>
+<% @patients.each do |patient| %>
+    <tr>
+		<td><%= link_to patient.name_last + ", " + patient.name_first, {:controller => "prescription", :action => "index", :id => patient.id} %></td>
+    </tr>
+<% end %>
+    </tbody>
+</table>
+<br><br>
+<a class="btn btn-info" href="logout">Log Out</a>
 </div>
+      </div>
+    </div>

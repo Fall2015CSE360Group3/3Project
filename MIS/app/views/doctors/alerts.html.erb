@@ -1,0 +1,43 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+<h1>Alerts</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main-content">
+<table rules = "all" class="table table-striped table-bordered patient-table">
+    <thead>
+		<th>Alert Created</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+		<th>Symptoms Requiring Attention</th>
+    </thead>
+    <tbody>
+<% @alerts.each do |alert| %>
+    <tr>
+        <% @alertPatient = Patient.find_by_id(alert.patient_id) %>
+		<td><%= alert.created_at %></td>
+        <td><%= @alertPatient.name_first %></td>
+        <td><%= @alertPatient.name_last%></td>
+        <% @symptoms = Condition.where("created_at >= ? AND patient_id = ?", 7.days.ago, alert.patient_id) %>
+		<td>
+            <table rules = "all" class="table table-striped table-bordered patient-table">
+                <tbody>
+                <% @symptoms.each do |symptom| %>
+                <tr>
+                     <td><%= link_to symptom.condition, {:controller => "condition", :action => "edit", :condition_id => symptom.id},{:class=>"dr-alert-btn"} %></td>
+                </tr>
+                <% end %>
+            </tbody>
+            </table>
+        </td>
+    </tr>
+<% end %>
+    </tbody>
+</table>
+<br><br>
+<a class="btn btn-info" href= "<%= @main_route %>">Main Menu</a>
+      </div>
+    </div>
+  </div>

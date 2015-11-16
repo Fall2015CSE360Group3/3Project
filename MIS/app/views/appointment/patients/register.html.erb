@@ -1,0 +1,26 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+      <h1>Patients#register</h1>
+      <p>Find me in app/views/patients/register.html.erb</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 register-content">
+      <%= form_tag(:action => 'register_submit') do %>
+          <h4>First Name:</h4><%= text_field_tag(:first_name, nil, :required => true) %>
+          <h4>Last Name:</h4><%= text_field_tag(:last_name, nil, :required => true) %>
+          <h4>Gender:</h4>
+          <p><%= radio_button_tag(:gender, 'Male', true) %>Male</p>
+          <p><%= radio_button_tag(:gender, 'Female') %>Female</p>
+          <h4>Social Security Number:</h4><%= text_field_tag(:ssn, nil, :maxlength => 9, :required => true) %>
+          <h4>Address:</h4><%= text_field_tag(:address, nil, :required => true) %>
+          <h4>Phone:</h4><%= telephone_field("",:phone, :required =>true) %>
+          <h4>Date of Birth:</h4><%= date_field("", :dob, :required => true, max: Date.today) %>
+          <h4>Weight:</h4><%= number_field("",:weight, :required => true, step: 0.01) %>
+          <h4>Height:</h4><%= number_field("",:height, :required => true, step: 0.01) %>
+          <p style="margin-top:10px;"><%= submit_tag("Register", :class=>"btn btn-primary")%></p>
+      <% end %>
+    </div>
+  </div>
+</div>

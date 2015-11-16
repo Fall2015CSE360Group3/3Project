@@ -1,2 +1,16 @@
-<h1>History#create</h1>
-<p>Find me in app/views/history/create.html.erb</p>
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+<h1>Report Medical History</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main-content">
+<%= form_tag(:action => 'create_submit', :patient_id => params[:patient_id]) do %>
+<p>Description:</br><%= text_field_tag(:description, nil, :required => true) %></p>
+<p>Date:</br><%= date_field("", :date, :required => true, max: Date.today) %></p>
+<%= submit_tag("Create", :class=>"btn btn-primary")%>
+<% end %>
+</div>
+    </div>
+  </div>

@@ -1,5 +1,7 @@
 class LabstaffController < ApplicationController
   
+  before_filter:relogin, :except => ["login", "login_submit"]
+
   def login
 	p "LABSTAFF LOGIN"
   end
@@ -22,6 +24,7 @@ class LabstaffController < ApplicationController
   def main
     @firstname = session[:firstname]
 	@lastname = session[:lastname]
+	@patients = Patient.all
   end
   
   def index

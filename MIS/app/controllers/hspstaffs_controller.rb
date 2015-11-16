@@ -1,4 +1,7 @@
 class HspstaffsController < ApplicationController
+
+  before_filter:relogin, :except => ["login", "login_submit"]
+  
   def login
   p "HSP_STAFF_LOGIN"
   end
@@ -82,4 +85,11 @@ class HspstaffsController < ApplicationController
 	session[:user_id] = nil
 	redirect_to :controller => 'welcome', :action => 'main'
   end
+
+
+  def generate
+    
+  end
+
+
 end

@@ -1,0 +1,61 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+<h1>Report: Ethnicities/Races of Registered Patients</h1>
+<p>You are login as <%= session[:access_id]%></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main-content">
+<% if @total != 0%>
+<table rules = "all" class="table table-striped table-bordered patient-table">
+    <thead>
+		<th>Ethnicity/Race</th>
+        <th>Number of Patients</th>
+        <th>Percentage of Total Patients</th>
+    </thead>
+    <tbody>
+    <tr>
+		<td>White/Caucasian</td>
+        <td><%= @counts[0] %></td>
+        <td><%= number_to_percentage((@counts[0].to_f/@total.to_f)*100, precision: 2) %></td>
+    </tr>
+    <tr>
+        <td>Black/African American</td>
+        <td><%= @counts[1] %></td>
+        <td><%= number_to_percentage((@counts[1].to_f/@total.to_f)*100, precision: 2) %></td>
+    </tr>
+    <tr>
+        <td>Asian</td>
+        <td><%= @counts[2] %></td>
+        <td><%= number_to_percentage((@counts[2].to_f/@total.to_f)*100, precision: 2) %></td>
+    </tr>
+    <tr>
+        <td>Hispanic</td>
+        <td><%= @counts[3] %></td>
+        <td><%= number_to_percentage((@counts[3].to_f/@total.to_f)*100, precision: 2) %></td>
+    </tr>
+    <tr>
+        <td>Native American</td>
+        <td><%= @counts[4] %></td>
+        <td><%= number_to_percentage((@counts[4].to_f/@total.to_f)*100, precision: 2) %></td>
+    </tr>
+    <tr>
+        <td>Other</td>
+        <td><%= @counts[5] %></td>
+        <td><%= number_to_percentage((@counts[5].to_f/@total.to_f)*100, precision: 2) %></td>
+    </tr>
+    <tr>
+    	<td>TOTAL:</td>
+    	<td><%= @total %></td>
+      <td>100%</td>
+    </tr>
+    </tbody>
+</table>
+<% else %>
+    <p>No registered patients found.</p>
+<% end %>
+<a class="btn btn-info" href= "<%= @main_route %>">Main Menu</a>
+</div>
+      </div>
+    </div>

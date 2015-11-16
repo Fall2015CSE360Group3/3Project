@@ -1,14 +1,18 @@
 <div class="container entry-content">
   <div class="row">
     <div class="col-md-12 page-header">
-      <h1>Hspstaffs#main: Welcome, <%= @firstname %> <%= @lastname %></h1>
-      <p>Find me in app/views/hspstaffs/main.html.erb</p>
+<h1>Welcome, <%= @firstname %> <%= @lastname %></h1>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 main-buttonview">
-      <p><a class="btn btn-primary" href="/patients/index">View Patients</a></p>
-      <p><a class="btn btn-info" href="logout">Log Out</a></p>
+    <div class="col-md-12 main-content button-content">
+      <p>
+<a class="btn btn-primary" href="/patients/index">View Patients</a>
+</p><p>
+<a class="btn btn-primary" href="/reports/select">Generate Healthcare Statistical Report</a>
+    </p><p>
+<a class="btn btn-info" href="logout">Log Out</a>
+      </p>
+      </div>
     </div>
   </div>
-</div>

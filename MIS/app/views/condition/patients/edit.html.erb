@@ -1,0 +1,26 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+<h1>Patients#edit</h1>
+<p>Find me in app/views/patients/edit.html.erb</p>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-6 edit-conditions">
+<%= form_tag(:action => 'edit_submit', :id => @editPatient[:id]) do %>
+          <h4>First Name:</h4><%= text_field_tag(:first_name, @editPatient[:name_first], :required => true) %>
+          <h4>Last Name:</h4><%= text_field_tag(:last_name, @editPatient[:name_last], :required => true) %>
+          <h4>Gender:</h4>
+          <p><%= radio_button_tag(:gender, 'Male', (@editPatient[:gender] == 'Male'))  %>Male
+          <p><%= radio_button_tag(:gender, 'Female', (@editPatient[:gender] == 'Female'))  %>Female
+          <h4>Social Security Number:</h4><%= text_field_tag(:ssn, @editPatient[:ssn], :maxlength => 9, :required => true) %>
+          <h4>Address:</h4><%= text_field_tag(:address, @editPatient[:address], :required => true) %>
+          <h4>Phone:</h4><%= telephone_field "", :phone, :value => @editPatient[:phone], :required => true %>
+          <h4>Date of Birth:</h4><%= date_field "", :dob, :value => @editPatient[:dob], :required => true,  max: Date.today %>
+          <h4>Weight:</h4><%= number_field "",:weight, :value => @editPatient[:weight], :required => true, step: 0.01 %>
+          <h4>Height:</h4><%= number_field "",:height, :value => @editPatient[:height], :required => true, step: 0.01 %>
+          <p style="margin-top:10px;"><%= submit_tag("Save Changes", :class=>'btn btn-primary')%></p>
+<% end %>
+      </div>
+    </div>
+  </div>

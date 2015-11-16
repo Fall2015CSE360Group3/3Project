@@ -1,0 +1,17 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+      <h1>nurses#register</h1>
+      <p>Find me in app/views/nurses/register.html.erb</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 register-content">
+      <%= form_tag(:action => 'register_submit') do %>
+      <h4>First Name:</h4><%= text_field_tag(:first_name, nil, :required => true) %>
+      <h4>Last Name:</h4><%= text_field_tag(:last_name, nil, :required => true) %>
+      <p style="margin-top:10px;"><%= submit_tag("Register", :class=>'btn btn-primary')%></p>
+      <% end %>
+    </div>
+  </div>
+</div>

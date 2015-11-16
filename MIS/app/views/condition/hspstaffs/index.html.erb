@@ -1,0 +1,36 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
+        <h1>Hspstaffs#index</h1>
+        <p>Find me in app/views/hspstaffs/index.html.erb</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 table-responsive">
+      <table rules = "all" class="table table-striped table-bordered patient-table">
+        <thead>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </thead>
+        <tbody>
+            <% @hspstaffs.each do |hspstaff| %>
+            <tr>
+                <td><%= hspstaff.name_first[0] + hspstaff.name_last[0] + hspstaff.id.to_s %></td>
+                <td><%= hspstaff.name_first %></td>
+                <td><%= hspstaff.name_last%></td>
+                <% if @valid == true %>
+                <td class="last-col"><%= link_to "Delete", {:controller => "hspstaffs", :action => "delete", :id => hspstaff.id},{:class=>'btn btn-danger'} %></td>
+                <td class="last-col"><%= link_to "Edit", {:controller => "hspstaffs", :action => "edit", :id => hspstaff.id},{:class=>'btn btn-info'} %></td>
+                <% end %>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+        <% if @valid == true %>
+        <p><a class="btn btn-primary" href="/hspstaffs/register">Add HSP Staff</a></p>
+        <% end %>
+        <p><a class="btn btn-info" href= "<%= @main_route %>">Main Menu</a></p>
+    </div>
+  </div>
+</div>
