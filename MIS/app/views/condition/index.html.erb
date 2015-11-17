@@ -5,15 +5,14 @@
       <p>You are login as <%= session[:access_id]%></p>
       <br>
       <% if @showGroup == true %>
-      <a>
       <%= form_tag(:controller => 'patients', :action => 'update_group', :patient_id => params[:id]) do %>
       Patient Group: <%= collection_select("", :selGroup, @groups, :to_s, :to_s, :selected => @currentPatient[:group]) %>
       <%= submit_tag "Save Changes", class: "btn btn-primary"%>
       <% end %>
-    </a>
     <% end %>
     </div>
   </div>
+  <div class="patient-conditions-overview">
   <h2>Condition</h2>
   <ul class="conditions-list">
     <% @conditions.each do |condition| %>
@@ -31,3 +30,4 @@
   <br><br>
   <a class="btn btn-info" href= "<%= @main_route %>">Main Menu</a>
 </div>
+  </div>

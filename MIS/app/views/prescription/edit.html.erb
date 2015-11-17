@@ -1,7 +1,16 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
 <h1>Edit e-Prescription</h1>
-<p>Find me in app/views/prescription/edit.html.erb</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main-content button-content">
 <%= form_tag(:action => 'edit_submit', :prescription_id => params[:prescription_id]) do %>
 <p>Medication:</br><%= text_field_tag(:name, @editPrescription[:name], :required => true) %></p>
 <p>Dosage:</br><%= number_field("",:dosage, :value => @editPrescription[:dosage], :required => true, step: 0.01) %></p>
-<%= submit_tag("Save Changes")%>
+<%= submit_tag("Save Changes", :class=>'btn btn-primary')%>
 <% end %>
+      </div>
+    </div>
+  </div>

@@ -25,7 +25,7 @@ a.btn:visited {
 }
 
 .col-md-12.find-path {
-    visibility: hidden;
+    display:none;
     height: 0px;
 }
 
@@ -135,6 +135,11 @@ ul.conditions-list li a:hover {
     width:100%;
 }
 
+.main-content.edit-conditions {
+    display:block;
+    float:none;
+}
+
 .patient-table .last-col {
     border:none;
     background-color:#fff;
@@ -226,4 +231,47 @@ ul.conditions-list li a:hover {
 
 .footer-text {
     color:white;
+}
+
+.home-buttons {
+    text-align:center;
+}
+
+.main-content {
+    padding-top:25px;
+}
+
+.button-content .btn {
+    min-width: 300px;
+}
+
+.register-form {
+    width:340px;
+    margin:auto;
+}
+
+.patient-conditions-overview .btn {
+    min-width:150px;
+}
+
+.dr-alert-btn {
+    font-weight:bold;
+}
+
+.table-skinny {
+    max-width:300px;
+    margin:auto;
+}
+
+.table th {
+    text-align:center;
+    font-weight:bold;
+    font-size:16px;
+    background-color:#d0d0d0;
+}
+
+@media (min-width:1200px) {
+    .container.table-wide {
+        width:1300px !important;
+    }
 }

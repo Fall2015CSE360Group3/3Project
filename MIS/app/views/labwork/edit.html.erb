@@ -1,7 +1,15 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
 <h1>Edit Labwork Report</h1>
-<p></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main-content" style="text-align:left;">
 <%= form_tag({:action => 'edit_submit', :labwork_id => params[:labwork_id]}, :multipart => true) do %>
 <p>Labwork Report File: <%= file_field_tag(:upload_file, :required => true) %></p>
-<%= submit_tag("Upload Report")%>
+<%= submit_tag("Upload Report", :class=>"btn btn-primary")%>
 <% end %>
-<br>
+</div>
+    </div>
+  </div>
