@@ -15,6 +15,7 @@
           <p><%= radio_button_tag(:gender, 'Female') %>Female</p>
           <p>Ethnicity/Race:<%= collection_select("", :ethnicity, @races, :to_s, :to_s) %>
           <h4>Social Security Number:</h4><%= text_field_tag(:ssn, nil, :maxlength => 9, :required => true) %>
+          <h4>Health Insurance Plan Number:</h4><%= text_field_tag(:hip, nil, :required => true) %>
           <h4>Address:</h4><%= text_field_tag(:address, nil, :required => true) %>
           <h4>Phone:</h4><%= telephone_field("",:phone, :required =>true) %>
           <h4>Date of Birth:</h4><%= date_field("", :dob, :required => true, max: Date.today) %>
