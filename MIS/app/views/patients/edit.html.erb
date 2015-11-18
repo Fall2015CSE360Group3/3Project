@@ -15,6 +15,7 @@
           <p><%= radio_button_tag(:gender, 'Female', (@editPatient[:gender] == 'Female'))  %>Female
           <p>Ethnicity/Race:<%= collection_select("", :ethnicity, @races, :to_s, :to_s, :selected => @editPatient[:ethnicity]) %>
           <h4>Social Security Number:</h4><%= text_field_tag(:ssn, @editPatient[:ssn], :maxlength => 9, :required => true) %>
+          <h4>Health Insurance Plan Number:</h4><%= text_field_tag(:hip, @editPatient[:hip], :required => true) %>
           <h4>Address:</h4><%= text_field_tag(:address, @editPatient[:address], :required => true) %>
           <h4>Phone:</h4><%= telephone_field "", :phone, :value => @editPatient[:phone], :required => true %>
           <h4>Date of Birth:</h4><%= date_field "", :dob, :value => @editPatient[:dob], :required => true,  max: Date.today %>

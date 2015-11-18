@@ -68,7 +68,7 @@ class PatientsController < ApplicationController
   end
   
   def register_submit
-	@patient = Patient.create(:name_first => params[:first_name], :name_last => params[:last_name], :gender => params[:gender], :ssn => params[:ssn], :address => params[:address], :phone => params[:phone], :dob => params[:dob], :weight => params[:weight], :height => params[:height], :ethnicity => params[:ethnicity], :group => "General" )
+	@patient = Patient.create(:name_first => params[:first_name], :name_last => params[:last_name], :gender => params[:gender], :ssn => params[:ssn], :hip => params[:hip], :address => params[:address], :phone => params[:phone], :dob => params[:dob], :weight => params[:weight], :height => params[:height], :ethnicity => params[:ethnicity], :group => "General" )
 	redirect_to :action => 'index'
   end
 
@@ -81,7 +81,7 @@ class PatientsController < ApplicationController
   def edit_submit
   	@editPatient = Patient.find_by_id(params[:id])
   	#Write changes to selected patient back to the database:
-  	@editPatient.update_attributes(:name_first => params[:first_name], :name_last => params[:last_name], :gender => params[:gender], :ssn => params[:ssn], :address => params[:address], :phone => params[:phone], :dob => params[:dob], :weight => params[:weight], :height => params[:height], :ethnicity => params[:ethnicity] )
+  	@editPatient.update_attributes(:name_first => params[:first_name], :name_last => params[:last_name], :gender => params[:gender], :ssn => params[:ssn], :hip => params[:hip], :address => params[:address], :phone => params[:phone], :dob => params[:dob], :weight => params[:weight], :height => params[:height], :ethnicity => params[:ethnicity] )
 	#Return to the patient index:
 	redirect_to :action => 'index'  
   end
