@@ -1,7 +1,18 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
 <h1>Welcome, <%= @firstname %> <%= @lastname %></h1>
-<p></p>
-<a href="/patients/index">View Patients</a>
-<br><br>
-<a href="/doctors/alerts">View Alerts (<%= @numAlerts %>) </a>
-<br><br>
-<a href="logout">Log Out</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main-content button-content">
+      <p>
+<a class="btn btn-primary" href="/patients/index">View Patients</a>
+</p><p>
+<a class="btn btn-primary" href="/doctors/alerts">View Alerts (<%= @numAlerts %>) </a>
+</p><p>
+<a class="btn btn-info" href="logout">Log Out</a>
+      </p>
+</div>
+    </div>
+  </div>

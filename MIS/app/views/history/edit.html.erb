@@ -1,7 +1,18 @@
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header">
 <h1>Edit Medical History</h1>
-<p></p>
+</div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 register-content main-content">
+      <div class="medical-history">
 <%= form_tag(:action => 'edit_submit', :history_id => params[:history_id]) do %>
 <p>Description: <%= text_field_tag(:description, @editHistory[:description], :required => true) %></p>
-<p>Date:</br><%= date_field "", :date, :value => @editHistory[:date], :required => true,  max: Date.today %></p>
-<%= submit_tag("Save Changes")%>
+<p>Date:<%= date_field "", :date, :value => @editHistory[:date], :required => true,  max: Date.today %></p>
+<%= submit_tag("Save Changes", :class=>'btn btn-info')%>
 <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,14 @@
-<h1>Submit Labwork Request</h1>
-<p></p>
+<div class="container entry-content">
+  <div class="row">
+    <div class="col-md-12 page-header"><h1>Submit Labwork Request</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 main-content">
 <%= form_tag(:action => 'create_submit', :patient_id => params[:patient_id]) do %>
 <p>Description:</br><%= text_field_tag(:description, nil, :required => true) %></p>
-<%= submit_tag("Create")%>
+<%= submit_tag("Create", :class=>"btn btn-primary")%>
 <% end %>
+      </div>
+    </div>
+  </div>

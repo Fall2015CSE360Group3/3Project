@@ -2,17 +2,18 @@
   <div class="row">
     <div class="col-md-12 page-header">
       <h1>Create Appointment</h1>
-      <p></p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12 register-content">
+      <div class="register-form">
       <%= form_tag(:action => 'create_submit', :patient_id => params[:patient_id]) do %>
       <h4>Doctor:</h4><%= collection_select("", :doctor_id, Doctor.all, :id, :fullname_specialty) %>
       <h4>Date:</h4><%= date_field("", :date, :required => true, min: Date.today) %>
       <h4>Time:</h4><%= time_select("", :time, :required => true, include_seconds: false, minute_step: 15, ampm: true ) %>
       <p style="margin-top:10px"><%= submit_tag("Create", :class=>'btn btn-primary')%></p>
       <% end %>
+        </div>
     </div>
   </div>
 </div>
