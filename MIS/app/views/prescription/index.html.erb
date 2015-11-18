@@ -1,39 +1,40 @@
 <div class="container entry-content">
 	<div class="row">
 		<div class="col-md-12 page-header">
-<h1>Prescription Index: <%= @headertext %></h1>
-<p>You are login as <%= session[:access_id]%></p>
+			<h1>Prescription Index: <%= @headertext %></h1>
+			<p>You are login as <%= session[:access_id]%></p>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-12 main-content">
-<table rules = "all" class="table table-striped table-bordered patient-table">
-    <thead>
-        <th>Medication</th>
-        <th>Dosage (mg)</th>
-        <th></th>
+			<table rules = "all" class="table table-striped table-bordered patient-table">
+				<thead>
+				<th>Medication</th>
+				<th>Dosage (mg)</th>
 				<th></th>
-    </thead>
-    <tbody>
-<% @prescriptions.each do |prescription| %>
-    <tr>
+				<th></th>
+				</thead>
+				<tbody>
+				<% @prescriptions.each do |prescription| %>
+						<tr>
 
-    	<td><%= prescription.name %></td>
-    	<td><%= prescription.dosage %></td>
-        <% if @allowEdit == true %>
-		<td><%= link_to "Edit", {:controller => "prescription", :action => "edit", :prescription_id => prescription.id},{:class=>"btn btn-info"} %></td>
-		<td><%= link_to "Delete", {:controller => "prescription", :action => "delete", :prescription_id => prescription.id},{:class=>"btn btn-danger"} %></td>
-		<% end %>
-    </tr>
-<% end %>
-    </tbody>
-</table>
-<% if @allowEdit == true %>
-<br>
-<%= link_to "Add Prescription", {:controller => "prescription", :action => "create", :patient_id => params[:id]},{:class=>"btn btn-primary"} %>
-<% end %>
-<br><br>
-<a class="btn btn-info" href= "<%= @main_route %>">Main Menu</a>
-</div>
+							<td><%= prescription.name %></td>
+							<td><%= prescription.dosage %></td>
+							<% if @allowEdit == true %>
+									<td><%= link_to "Edit", {:controller => "prescription", :action => "edit", :prescription_id => prescription.id},{:class=>"btn btn-info"} %></td>
+									<td><%= link_to "Delete", {:controller => "prescription", :action => "delete", :prescription_id => prescription.id},{:class=>"btn btn-danger"} %></td>
+							<% end %>
+						</tr>
+				<% end %>
+				</tbody>
+			</table>
+			<% if @allowEdit == true %>
+					<br>
+					<%= link_to "Add Prescription", {:controller => "prescription", :action => "create", :patient_id => params[:id]},{:class=>"btn btn-primary"} %>
+			<% end %>
+			<br><br>
+			<a class="btn btn-info" href= "<%= @main_route %>">Main Menu</a>
+			<a class="btn btn-primary" href ="javascript:window.print()">Print Prescriptions</a>
 		</div>
 	</div>
+</div>
