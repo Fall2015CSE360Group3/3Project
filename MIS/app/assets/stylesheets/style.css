@@ -21,7 +21,7 @@ a.btn:visited {
 .col-md-12.page-header {
     text-align:center;
     margin: auto;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
 }
 
 .col-md-12.find-path {
@@ -31,11 +31,6 @@ a.btn:visited {
 
 .col-md-12.page-header-text {
     color:black;
-}
-
-.welcom-body {
-    height: 691px;
-    width: 100%;
 }
 
 .login-button {
@@ -77,8 +72,14 @@ a.btn:visited {
 }
 
 .body {
-    background-size: 100%;
-    background-image: url("http://pics4.city-data.com/cpicc/cfiles20907.jpg");
+    /*background-size: 100%;*/
+    /*background-image: url("http://pics4.city-data.com/cpicc/cfiles20907.jpg");*/
+}
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    background-color: #BAEBF9;
 }
 
 .login-content .btn,
@@ -101,9 +102,11 @@ a.btn:visited {
     margin:auto;
 }
 
-.container {
+.container.welcome-page {
     background-color: rgba(255,255,255,0.33);
     border-radius: 10px;
+    padding:20px;
+    height:100%;
 }
 
 .container .main-buttonview .btn {
@@ -163,7 +166,7 @@ ul.conditions-list li a:hover {
 .photo {
     background-image : url("http://dreamatico.com/data_images/doctor/doctor-8.jpg");
     background-size : 50%;
-    height:100;
+    height:100%;
 }
 
 .column-left {
@@ -200,13 +203,13 @@ ul.conditions-list li a:hover {
 .usr-story {
     text-align:center;
     margin: auto;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
     background-color: rgba(255,255,255,0.43);
-    border-radius: 5px;
+    /*border-radius: 5px;*/
 }
 
 .usr-story-h1 {
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
     text-align:center;
     margin: auto;
 }
@@ -214,7 +217,7 @@ ul.conditions-list li a:hover {
 .usr-story-text {
   display: inline-block;
   font-size:30px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
   line-height: 40px;
   margin : 5% 2% 5% 2%;
   vertical-align: middle;
@@ -227,6 +230,10 @@ ul.conditions-list li a:hover {
     height: 250px;
     line-height: 25px;
     margin: auto;
+}
+
+.footer {
+    display:none;
 }
 
 .footer-text {
@@ -250,6 +257,24 @@ ul.conditions-list li a:hover {
     margin:auto;
 }
 
+.patient-conditions-overview {
+    text-align:center;
+    max-width:300px;
+    margin:auto;
+    float:none;
+}
+
+.patient-conditions-overview ul li {
+    list-style-type:none;
+    background: url(images/bulletpoint.png) no-repeat 59px 10px;
+    text-align:left;
+    padding-left:75px;
+}
+
+.patient-conditions-overview ul li:before {
+
+}
+
 .patient-conditions-overview .btn {
     min-width:150px;
 }
@@ -268,6 +293,27 @@ ul.conditions-list li a:hover {
     font-weight:bold;
     font-size:16px;
     background-color:#d0d0d0;
+}
+
+.welcome-body .col-md-4 img {
+    max-height:237px;
+}
+
+.welcome-body .col-md-4 h2 {
+    text-align:center;
+}
+
+.welcome-body .col-md-4 p.home-caption {
+    max-width: 352px;
+    display:block;
+    margin:auto;
+    font-size:20px;
+    line-height:23px;
+    padding-top:20px;
+}
+
+.welcome-page {
+    padding-bottom:50px;
 }
 
 @media (min-width:1200px) {
